@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: httpd-deployment
+  name: hello-openshift-deployment
   labels:
-    app: httpd
+    app: hello-openshift
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: httpd
+      app: hello-openshift
   template:
     metadata:
       labels:
-        app: httpd
+        app: hello-openshift
     spec:
       containers:
-      - name: httpd
-        image: httpd:latest
+      - name: hello-openshift
+        image: openshift/hello-openshift
         ports:
         - containerPort: 8080
